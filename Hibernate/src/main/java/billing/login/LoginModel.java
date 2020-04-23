@@ -16,6 +16,17 @@ public class LoginModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
+	@Column(name = "username")
+	private String username;
+	@Column(name = "password")
+	private String password;
+	@Column(name = "dob")
+	private Date date;
+	
+
+	@Column(name = "email")
+	private String email;
+	
 	public int getId() {
 		return id;
 	}
@@ -23,16 +34,6 @@ public class LoginModel {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	@Column(name = "username")
-	private String username;
-	@Column(name = "password")
-	private String password;
-	@Column(name = "created_date")
-	private Date createdDate;
-	@Column(name = "email")
-	private String email;
-
 	public String getEmail() {
 		return email;
 	}
@@ -57,12 +58,11 @@ public class LoginModel {
 		this.password = password;
 	}
 
-	public Date getCreatedDate() {
-		return createdDate;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setDate(Date date) {
+		this.date = date;
 	}
-
 }

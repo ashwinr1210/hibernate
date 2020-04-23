@@ -14,13 +14,13 @@ public class RegisterController {
 			
 			if (!request.getParameter("username").isEmpty())
 				return new RegisterService().addCredentials(request.getParameter("username"),
-						request.getParameter("password"),request.getParameter("email"));
+						request.getParameter("password"),request.getParameter("email"),request.getParameter("dob"));
 			else
-				return "error";
+				return "errorr";
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "error";
+		return "errorr";
 	}
 }
