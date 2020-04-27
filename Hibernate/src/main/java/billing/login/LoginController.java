@@ -3,16 +3,20 @@ package billing.login;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
-	@RequestMapping("/checkCredentials")
-	public String add(HttpServletRequest request) {
+	@RequestMapping(value="/checkCredentials",method = RequestMethod.POST)
+	public String add(@ModelAttribute LoginModel model) {
+		System.out.println("@@@@@@@@@@@@");
+		
         try {
-        	if(!request.getParameter("username").isEmpty())
-        		return new LoginService().validateCredentials(request.getParameter("username"), request.getParameter("password"));
+        	if(!model.getUsername().isEmpty())
+        		return new LoginService().validateCredentials(model.getUsername(), model.getPassword());
         	else
         		return "error";
         	
@@ -21,4 +25,22 @@ public class LoginController {
         }
 		return "error";
 	}
+	
+	
+	
+//	@RequestMapping(value="/checkCredentials",method = RequestMethod.POST)
+//	public String add(HttpServletRequest request) {
+//		System.out.println("@@@@@@@@@@@@");
+//		
+//        try {
+//        	if(!request.getParameter("username").isEmpty())
+//        		return new LoginService().validateCredentials(request.getParameter("username"), request.getParameter("password"));
+//        	else
+//        		return "error";
+//        	
+//        }catch(Exception e) {
+//        	e.printStackTrace();
+//        }
+//		return "error";
+//	}
 }

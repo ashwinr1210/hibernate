@@ -42,7 +42,7 @@ if ((x == "") ||(y=="")){
                 </tr>
                 </div>
                  <tr>
-                    <td><input class="btn btn-success" type="submit" value="login" /></td>
+                  <td>  <div class="text-center"><input class="btn btn-success" type="submit" value="login" /></div></td>
                 </tr>
             </table>
         </form>

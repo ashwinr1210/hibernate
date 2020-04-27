@@ -2,8 +2,11 @@ package billing.login;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
 @RequestMapping("/register")
@@ -23,4 +26,16 @@ public class RegisterController {
 		}
 		return "errorr";
 	}
+	
+	@RequestMapping("/testurl")
+	public String sub() {
+		try {
+			System.out.println("@@@@@@@@@@@@");
+			return "successs";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "errorr";
+	}
+
 }

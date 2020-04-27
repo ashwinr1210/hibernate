@@ -64,8 +64,8 @@ function checkPass()
 </head>
 <body>
 	<div align="center" class="container-sm">
-		<form name="myform" action="../register/addCredentials" method="post"
-			onsubmit="return validateForm()">
+		<form name="myform" action="../register/addCredentials" s
+		 onsubmit="return validateForm()">
 			<table border="0">
 			<div class="form-group">
 				<tr>
