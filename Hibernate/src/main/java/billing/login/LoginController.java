@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/login")
@@ -27,6 +28,18 @@ public class LoginController {
 	}
 	
 	
+ @RequestMapping("/testing")
+	public  @ResponseBody String  test() {
+		System.out.println("@@@@@@@@@@@@");	
+        try {
+       
+        		return "ashwin";
+        	
+        }catch(Exception e) {
+        	e.printStackTrace();
+        }
+		return "error";
+	}
 	
 //	@RequestMapping(value="/checkCredentials",method = RequestMethod.POST)
 //	public String add(HttpServletRequest request) {

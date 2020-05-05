@@ -14,16 +14,16 @@ public class RegisterService {
 	Session session = sessFact.getCurrentSession();
 	Transaction tx = session.beginTransaction();
 
-	public String addCredentials(String username,String password,String email,String dob) {
+	public String addCredentials(String username,String password,String email,java.util.Date date) {
 
 		try {
 			LoginModel loginmodel=new LoginModel();
 			loginmodel.setUsername(username);
 			loginmodel.setPassword(password);
 			loginmodel.setEmail(email);
-		
-			java.util.Date date1= new SimpleDateFormat("yyyy-mm-dd").parse(dob);  
-			loginmodel.setDate(date1);
+		    loginmodel.setDate(date);
+		    System.out.println("@@@@@@@@@@@@@@@@@"+date);
+//			java.util.Date date1= new SimpleDateFormat("yyyy-mm-dd").parse(date);  
 			session.save(loginmodel);
 		} catch (Exception e) {
 			e.printStackTrace();

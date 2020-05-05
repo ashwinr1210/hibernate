@@ -38,7 +38,7 @@ if ((x == "") ||(y=="")){
                 <div class="form-group">
                 <tr>
                     <td>Password:</td>
-                    <td><input type="text" class="form-control" placeholder="password" name="password" /></td>
+                    <td><input type="password" class="form-control" placeholder="password" name="password" /></td>
                 </tr>
                 </div>
                  <tr>

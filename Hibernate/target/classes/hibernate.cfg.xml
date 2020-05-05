@@ -22,5 +22,6 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="billing.login.LoginModel" />
+         <mapping class="billing.product.ProductModel" />
     </session-factory>
 </hibernate-configuration>

@@ -5,19 +5,21 @@ import javax.servlet.http.HttpServletRequest;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
-	@RequestMapping("/addCredentials")
-	public String add(HttpServletRequest request) {
+	@RequestMapping(value="/addCredentials",method = RequestMethod.POST)
+	public String add(@ModelAttribute LoginModel model) {
 		try {
 			
-			if (!request.getParameter("username").isEmpty())
-				return new RegisterService().addCredentials(request.getParameter("username"),
-						request.getParameter("password"),request.getParameter("email"),request.getParameter("dob"));
+			if (!model.getUsername().isEmpty())
+				return new RegisterService().addCredentials(model.getUsername(),
+						model.getPassword(),model.getEmail(),model.getDate());
 			else
 				return "errorr";
 
@@ -27,15 +29,6 @@ public class RegisterController {
 		return "errorr";
 	}
 	
-	@RequestMapping("/testurl")
-	public String sub() {
-		try {
-			System.out.println("@@@@@@@@@@@@");
-			return "successs";
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "errorr";
-	}
+	
 
 }
